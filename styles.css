@@ -77,3 +77,8 @@ body {
     margin-bottom: 10px; 
     border-radius: 10px; 
 }
+.key.active {
+    background-color: lightblue;
+    transform: scale(0.9);
+    transition: transform 0.1s;
+}
