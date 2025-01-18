@@ -111,15 +111,50 @@ class VirtualKeyboard {
 
     setupEventListeners() {
         document.addEventListener("keydown", (event) => {
+            const pressedKey = event.key;
+            const keys = Array.from(this.keyboardElement.getElementsByClassName("key"));
+            
+            const virtualKey = keys.find(key => 
+                key.textContent.toLowerCase() === pressedKey.toLowerCase() ||
+                (pressedKey === " " && key.textContent === "Space") ||
+                (pressedKey === "Backspace" && key.textContent === "Backspace") ||
+                (pressedKey === "Enter" && key.textContent === "Enter") ||
+                (pressedKey === "Tab" && key.textContent === "Tab") ||
+                (pressedKey === "CapsLock" && key.textContent === "Caps Lock")
+            );
+            
+            if (virtualKey) {
+                virtualKey.classList.add("active");
+            }
+            
             if (event.key === "CapsLock") {
                 this.toggleCapsLock();
                 event.preventDefault();
             } else if (event.key === "Backspace") {
                 this.inputElement.value = this.inputElement.value.slice(0, -1);
             } else if (event.key.length === 1) {
-                this.inputElement.value += this.capsLock ? event.key.toUpperCase() : event.key.toLowerCase();
+                const char = this.getKeyText(event.key);
+                this.inputElement.value += char;
             } else if (event.shiftKey && event.altKey) {
                 this.switchLanguage();
+            }
+        });
+
+        document.addEventListener("keyup", (event) => {
+            const pressedKey = event.key;
+            const keys = Array.from(this.keyboardElement.getElementsByClassName("key"));
+            
+            const virtualKey = keys.find(key => 
+                key.textContent.toLowerCase() === pressedKey.toLowerCase() ||
+                (pressedKey === " " && key.textContent === "Space") ||
+                (pressedKey === "Backspace" && key.textContent === "Backspace") ||
+                (pressedKey === "Enter" && key.textContent === "Enter") ||
+                (pressedKey === "Tab" && key.textContent === "Tab") ||
+                (pressedKey === "CapsLock" && key.textContent === "Caps Lock")
+            );
+            
+            if (virtualKey) {
+                virtualKey.classList.remove("active");
             }
         });
     }
