@@ -1,7 +1,7 @@
 body {
-    background: url('/shrek-rutp-4.webp') no-repeat center center fixed;
+    background: url('shrek-rutp-4.webp') no-repeat center center fixed;
     background-size: cover;
-    background-position: center 30%; /* Сдвигаем фон вниз, чтобы лицо было видно */
+    background-position: center 30%; 
     color: rgb(0, 0, 0);
     font-family: Arial, sans-serif;
     display: flex;
@@ -72,8 +72,8 @@ body {
     max-width: 600px;
 }
 .keyboard-image {
-    max-width: 100%; /* Чтобы изображение не выходило за границы контейнера */
-    height: auto; /* Сохраняем пропорции */
-    margin-bottom: 10px; /* Отступ между фото и полем ввода */
-    border-radius: 10px; /* Закруглённые углы (если нужно) */
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 10px; 
+    border-radius: 10px; 
 }
