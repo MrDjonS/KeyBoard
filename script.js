@@ -75,7 +75,7 @@ class VirtualKeyboard {
         });
     }
 
-    getKeyText(key) {
+    getKeyText(key) { 
         if (key.length === 1 && /[a-zA-Zа-яёА-ЯЁ]/.test(key)) {
             return this.capsLock ? key.toUpperCase() : key.toLowerCase();
         }
@@ -99,7 +99,7 @@ class VirtualKeyboard {
 
     toggleCapsLock() {
         this.capsLock = !this.capsLock;
-        this.renderKeyboard(); // Перерисуем клавиатуру, чтобы изменить регистр букв.
+        this.renderKeyboard(); 
     }
 
     switchLanguage() {
