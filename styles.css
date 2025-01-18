@@ -1,0 +1,79 @@
+body {
+    background: url('/shrek-rutp-4.webp') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center 30%; /* Сдвигаем фон вниз, чтобы лицо было видно */
+    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+
+#root {
+    text-align: center;
+}
+
+.keyboard-container {
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgba(255, 0, 0, 0);
+    display: inline-block;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    gap: 5px;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(110, 9, 9);
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+    height: 50px;
+    width: 50px;
+}
+
+.key:active {
+    background-color: rgb(255, 0, 200);
+    color: white;
+}
+
+.wide-key {
+    width: 100px;
+}
+
+.input {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 18px;
+    width: 90%;
+    max-width: 600px;
+}
+.keyboard-image {
+    max-width: 100%; /* Чтобы изображение не выходило за границы контейнера */
+    height: auto; /* Сохраняем пропорции */
+    margin-bottom: 10px; /* Отступ между фото и полем ввода */
+    border-radius: 10px; /* Закруглённые углы (если нужно) */
+}
